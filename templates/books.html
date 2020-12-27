@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>B.O.O.K.</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block content %}
     {% for book in books %}
         {{ book.book_name }}<br>
         {{ book.author_name }}<br>
@@ -13,5 +7,4 @@
         <img src= {{ book.book_cover_link }} style="width:128px;height:128px;"><br>
         {{ book.book_description }}<br>
     {% endfor %}
-</body>
-</html>
+{% endblock %}
