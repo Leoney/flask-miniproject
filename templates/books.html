@@ -10,7 +10,7 @@
         {{ book.book_name }}<br>
         {{ book.author_name }}<br>
         {{ book.category_name }}<br>
-        <img src= "{{ book.book_cover_link }}" style="width:128px;height:128px;"><br>
+        <img src= {{ book.book_cover_link }} style="width:128px;height:128px;"><br>
         {{ book.book_description }}<br>
     {% endfor %}
 </body>
