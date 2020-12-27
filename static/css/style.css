@@ -1,3 +1,4 @@
-nav .brand-logo, nav ul a{
+nav.brand-logo, 
+nav ul a{
     color: #2a3137 !important;
 }
