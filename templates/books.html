@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>book Manager</title>
+    <title>B.O.O.K.</title>
 </head>
 <body>
     {% for book in books %}
         {{ book.book_name }}<br>
         {{ book.author_name }}<br>
         {{ book.category_name }}<br>
-        {{ book.book_cover_link }}<br>
+        <img src= "{{ book.book_cover_link }}" style="width:128px;height:128px;"><br>
         {{ book.book_description }}<br>
     {% endfor %}
 </body>
