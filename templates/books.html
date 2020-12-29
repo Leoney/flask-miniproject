@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
-    {% for book in books %}
-        {{ book.book_name }}<br>
-        {{ book.author_name }}<br>
-        {{ book.category_name }}<br>
-        <img src= {{ book.book_cover_link }} style="width:128px;height:128px;"><br>
-        {{ book.book_description }}<br>
-    {% endfor %}
+    <div class="row">
+        {% for book in books %}
+        <div class="col s4"></div>
+            <img src= {{ book.book_cover_link }} style="width:30%;height:30%;"><br>
+        </div>
+        {% endfor %}
+    </div>
 {% endblock %}
