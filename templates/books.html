@@ -1,10 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
-    <div class="row">
-        {% for book in books %}
-        <div class="col s3" style="border: 2px solid red;"></div>
-            Hello
+    <div class="container">
+        <div class="row">
+            {% for book in books %}
+            <div class="col s3" style="border: 2px solid red; text-align: center;"></div>
+                Hello
+            </div>
+            {% endfor %}
         </div>
-        {% endfor %}
     </div>
 {% endblock %}
