@@ -7,6 +7,7 @@ from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
+import random
 
 
 app = Flask(__name__)
@@ -22,6 +23,7 @@ mongo = PyMongo(app)
 @app.route("/get_books")
 def get_books():
     books = mongo.db.books.find()
+    random.shuffle(books)
     return render_template("books.html", books=books)
 
 @app.route("/register", methods=["GET", "POST"])
