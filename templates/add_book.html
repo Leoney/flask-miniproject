@@ -7,27 +7,40 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-book prefix light-blue-text text-darken-4"></i>
-                    <input id="book_title_prefix" type="text" class="validate">
+                    <input id="book_title_prefix" name="book_title" minlength="5" maxlength="50"
+                    type="text" class="validate" required>
                     <label for="book_title_prefix">Book Title</label>
                 </div>
                 <div class="input-field col s12">
                     <i class="fas fa-feather-alt prefix light-blue-text text-darken-4"></i>
-                    <input id="author_prefix" type="text" class="validate">
+                    <input id="author_prefix" name="author_prefix" minlength="5" maxlength="50"
+                    type="text" class="validate" required>
                     <label for="author_prefix">Author</label>
                 </div>
+                </div>
                 <div class="input-field col s12">
-                    <i class="fas fa-code-branch prefix light-blue-text text-darken-4"></i>
-                    <input id="genre_prefix" type="text" class="validate">
+                    <select>
+                        <i class="fas fa-code-branch prefix light-blue-text text-darken-4"></i>
+                        <option value="" disabled selected>Choose the genre</option>
+                        <option value="1">Classics</option>
+                        <option value="2">Romance</option>
+                        <option value="3">Fantasy</option>
+                        <option value="4">Fiction</option>
+                        <option value="5">Non-Fiction</option>
+                        <option value="6">Young Adult</option>
+                    </select>
                     <label for="genre_prefix">Genre</label>
                 </div>
                 <div class="input-field col s12">
                     <i class="fas fa-link prefix light-blue-text text-darken-4"></i>
-                    <input id="book_cover_prefix" type="text" class="validate">
+                    <input id="book_cover_prefix" name="book_cover_prefix" minlength="5" maxlength="50"
+                    type="text" class="validate" required>
                     <label for="book_cover_prefix">Book Cover Link</label>
                 </div>
                 <div class="input-field col s12">
                     <i class="fas fa-scroll prefix light-blue-text text-darken-4"></i>
-                    <input id="book_description_prefix" type="text" class="validate">
+                    <textarea id="book_description_prefix" name="book_description_prefix" minlength="5"
+                        maxlength="200" class="materialize-textarea validate" required></textarea>
                     <label for="book_description_prefix">Book Description</label>
                 </div>
             </div>
