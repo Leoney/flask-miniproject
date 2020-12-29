@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
-    <div class="container" style="width: 80%; border: 1px solid blue;">
+    <div class="container">
         <div class="row">
             {% for book in books[:8] %}
                 <div class="col s12 m6 l3">
                     <div class="card">
                             <div class="card-image">
-                                <img src="{{ book.book_cover_link }}" style="height: 20%;">
+                                <img src="{{ book.book_cover_link }}">
                             </div>
                     </div>
                 </div>
