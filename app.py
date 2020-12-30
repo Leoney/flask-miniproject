@@ -92,9 +92,9 @@ def add_book():
     if request.method == "POST":
         task = {
             "category_name": request.form.get("category_name"),
-            "book_name": request.form.get("task_name"),
+            "book_name": request.form.get("book_name"),
             "uthor_name": request.form.get("author_name"),
-            "book_description": request.form.get("task_description"),
+            "book_description": request.form.get("book_description"),
             "book_cover_link": request.form.get("book_cover_link"),
             "book_description": request.form.get("book_description")
         }
