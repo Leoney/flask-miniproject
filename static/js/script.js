@@ -4,7 +4,7 @@
 
 $(document).ready(function () {
     $(".sidenav").sidenav({edge: "right"});
-    $('select').formSelect();
+    $('select').material_select();
 });
 
 
