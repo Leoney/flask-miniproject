@@ -87,7 +87,7 @@ def logout():
     session.pop("user")
     return redirect(url_for("login"))
 
-@app.route("/add_book")
+@app.route("/add_book", methods=["GET", "POST"])
 def add_book():
     if request.method == "POST":
         book = {
