@@ -90,12 +90,12 @@ def logout():
 @app.route("/add_book")
 def add_book():
     if request.method == "POST":
-        task = {
+        book = {
             "category_name": request.form.get("category_name"),
             "book_name": request.form.get("book_name"),
             "author_name": request.form.get("author_name"),
-            "book_description": request.form.get("book_description"),
-            "book_cover_link": request.form.get("book_cover_link")
+            "book_cover_link": request.form.get("book_cover_link"),
+            "book_description": request.form.get("book_description")
         }
         mongo.db.books.insert_one(book)
         flash("Book Successfully Added")
