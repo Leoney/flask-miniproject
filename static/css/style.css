@@ -6,7 +6,7 @@
     line-height: 2;
 }
 
-.custom-select select {
+.custom-select {
     display: none; /*hide original SELECT element:*/
     margin-left: 3rem;
     width: calc(100% - 3rem);
