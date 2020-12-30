@@ -8,6 +8,8 @@
 
 .custom-select select {
     display: none; /*hide original SELECT element:*/
+    margin-left: 3rem;
+    width: calc(100% - 3rem);
 }
 
 /*style the arrow inside the select element:*/
