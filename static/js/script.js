@@ -4,7 +4,6 @@
 
 $(document).ready(function () {
     $(".sidenav").sidenav({edge: "right"});
-    $('select').material_select();
 });
 
 
