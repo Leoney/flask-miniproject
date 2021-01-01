@@ -106,9 +106,9 @@ def add_book():
 
 @app.route("/get_book_profile/<book_id>", methods=["GET"])
 def get_book_profile(book_id):
-    book_id = mongo.db.books.find_one({"_id": ObjectId(book_id)})
+    find_book_id = mongo.db.books.find_one({"_id": ObjectId(book_id)})
     books = list(mongo.db.books.find())
-    return render_template("book_profile.html", book_id=book_id, books=books)
+    return render_template("book_profile.html", find_book_id=find_book_id, books=books)
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
