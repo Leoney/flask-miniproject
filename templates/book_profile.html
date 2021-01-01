@@ -4,11 +4,8 @@
         <div class="row">
             {% for book in books %}
                 {% if book._id == book_id %}
-                    {{ book.category_name }}<br>
-                    {{ book.book_cover_link }}<br>
-                    {{ book.book_name }}<br>
-                    {{ book.author_name }}<br>
-                    {{ book.book_cover_link }}<br>
+                    {{ book._id }}<br>
+                    {{ book_id }}<br>
                 {% endif %}
             {% endfor %}
         </div>
