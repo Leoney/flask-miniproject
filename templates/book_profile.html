@@ -2,11 +2,11 @@
 {% block content %}
     <div class="container">
         <div class="row">
-            {{ find_book_id.book_cover_link }}<br>
+            <img src="{{ find_book_id.book_cover_link }}"><br>
             {{ find_book_id.category_name }}<br>
             {{ find_book_id.book_name }}<br>
             {{ find_book_id.author_name }}<br>
-            {{ find_book_id.description }}<br>
+            {{ find_book_id.book_description }}<br>
         </div>
     </div>   
 {% endblock %}
