@@ -6,6 +6,16 @@
     line-height: 2;
 }
 
-.book-profile {
+.container.book-profile {
     padding-top: 2rem;
+}
+
+.star-widget input{
+    display: none;
+}
+
+.star-widget label {
+    font-size: 40px;
+    color: #444;
+    padding: 10px;
 }
