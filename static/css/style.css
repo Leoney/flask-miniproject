@@ -10,6 +10,10 @@
     padding-top: 2rem;
 }
 
+..star-widget {
+    text-align: center;
+}
+
 .star-widget input{
     display: none;
 }
@@ -18,4 +22,19 @@
     font-size: 40px;
     color: #444;
     padding: 10px;
+    transition: all 0.2s ease;
+}
+
+.star-widget input:not(:checked) ~label:hover,
+.star-widget input:not(:checked) ~label:hover ~label{
+    color: #fd4;
+}
+
+input:checked ~label {
+    color: #fd4;
+}
+
+input#rate-5:checked ~label {
+    color: #fe7;
+    text-shadow: 0 0 20px #952;
 }
