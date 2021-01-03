@@ -19,7 +19,7 @@
 }
 
 .starwidget input:not(:checked) ~label:hover,
-.star-widget input:not(:checked) ~label:hover ~label {
+.starwidget input:not(:checked) ~label:hover ~label {
     color: #fd4;
 }
 
