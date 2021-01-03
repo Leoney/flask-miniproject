@@ -9,3 +9,25 @@
 .container.book-profile {
     padding-top: 2rem;
 }
+
+.starwidget label {
+    font-size: 1.5rem;
+    color: #444;
+    padding: 10px;
+    float: right;
+    transition: all 0.2s ease;
+}
+
+.starwidget input:not(:checked) ~label:hover,
+.star-widget input:not(:checked) ~label:hover ~label {
+    color: #fd4;
+}
+
+input:checked ~label {
+    color: #fd4;
+}
+
+input#rate-5:checked ~label {
+    color: #fe7;
+    text-shadow: 0 0 20px #952;
+}
