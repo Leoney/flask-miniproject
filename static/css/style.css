@@ -10,6 +10,10 @@
     padding-top: 2rem;
 }
 
+.starwidget input {
+    display: none;
+}
+
 .starwidget label {
     font-size: 1.5rem;
     color: #444;
@@ -18,16 +22,16 @@
     transition: all 0.2s ease;
 }
 
-.starwidget input:not(:checked) ~label:hover,
-.starwidget input:not(:checked) ~label:hover ~label {
+.starwidget input:not(:checked) ~ label:hover,
+.starwidget input:not(:checked) ~ label:hover ~ label {
     color: #fd4;
 }
 
-input:checked ~label {
+input:checked ~ label {
     color: #fd4;
 }
 
-input#rate-5:checked ~label {
+input#rate-5:checked ~ label {
     color: #fe7;
     text-shadow: 0 0 20px #952;
 }
