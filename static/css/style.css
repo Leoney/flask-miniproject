@@ -18,8 +18,8 @@
     transition: all 0.2s ease;
 }
 
-.starwidget input:not(:checked) ~label:hover,
-.starwidget input:not(:checked) ~label:hover ~label {
+.starwidget>div input:not(:checked) ~label:hover,
+.starwidget>div input:not(:checked) ~label:hover ~label {
     color: #fd4;
 }
 
