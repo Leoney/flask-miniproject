@@ -14,15 +14,11 @@
     display: none;
 }
 
-.starwidget {
-    padding-right: 8rem;
-}
-
 .starwidget label {
     font-size: 1.5rem;
     color: #444;
     padding: 10px;
-    float: right;
+    float: left;
     transition: all 0.2s ease;
 }
 
