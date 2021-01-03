@@ -10,12 +10,11 @@
     padding-top: 2rem;
 }
 
-.starwidget div label {
+.starwidget{
     font-size: 40px;
     color: #444;
     padding: 10px;
     float: right;
-    transition: all 0.2s ease;
 }
 
 .starwidget input:not(:checked) ~label:hover,
