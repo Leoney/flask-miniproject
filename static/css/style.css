@@ -15,7 +15,7 @@
     flex-direction:column;
 }
 
-.starwidget form {
+.starform {
     display:flex;
     align-self:center;
     flex-direction:row-reverse;
