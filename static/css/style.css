@@ -10,17 +10,6 @@
     padding-top: 2rem;
 }
 
-.starwidget {
-    display:flex;
-    flex-direction:column;
-}
-
-.starform {
-    display:flex;
-    align-self:center;
-    flex-direction:row-reverse;
-}
-
 .starwidget input {
     display: none;
 }
