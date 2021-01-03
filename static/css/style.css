@@ -15,8 +15,7 @@
 }
 
 .starwidget {
-    display: flex;
-    align-content: center;
+    padding-right: 8rem;
 }
 
 .starwidget label {
