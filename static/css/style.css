@@ -10,6 +10,10 @@
     padding-top: 2rem;
 }
 
+.starwidget {
+    float: right;
+}
+
 .starwidget input {
     display: none;
 }
