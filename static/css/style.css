@@ -9,3 +9,7 @@
 .container.book-profile {
     padding-top: 2rem;
 }
+
+.starwidget {
+    justify-content: center;
+}
