@@ -10,7 +10,7 @@
     padding-top: 2rem;
 }
 
-.starwidget label {
+.starwidget>div label {
     font-size: 40px;
     color: #444;
     padding: 10px;
