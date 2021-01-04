@@ -120,7 +120,7 @@ def add_reading_list():
             "user": session["user"]
         }
     mongo.db.to_read.insert_one(book_to_read)
-    return "Added to reading list"
+    return render_template("book_profile.html")
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
