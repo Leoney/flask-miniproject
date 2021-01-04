@@ -113,8 +113,8 @@ def get_book_profile(book_id):
 
 @app.route("/add_reading_list", methods=["GET", "POST"])
 def add_reading_list():
-    add_reading = request.form['add_reading']
     if request.method == "POST":
+        add_reading = request.form['add_reading']
         book_to_read = {
             "book_id": add_reading,
             "user": session["user"]
