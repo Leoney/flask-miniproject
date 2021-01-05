@@ -108,11 +108,14 @@ def add_book():
 def get_book_profile(book_id):
     book_id = book_id
     find_book_id = mongo.db.books.find_one({"_id": ObjectId(book_id)})
+    book_name = find_book_id.book_name
+    get_book_rate = mongo.db.book_rate.find_one({"book_name": book_name})
     books = list(mongo.db.books.find())
-    return render_template("book_profile.html", find_book_id=find_book_id, books=books, book_id = book_id)
+    return render_template("book_profile.html", find_book_id=find_book_id, book_rate = get_book_rate, books=books, book_id = book_id)
 
 @app.route("/add_comment/<book_name>", methods=["GET", "POST"])
 def add_comment(book_name):
+    if 
     if request.method == "POST":
         find_book_name = mongo.db.books.find_one({"book_name": book_name})
         book_name = book_name
@@ -125,7 +128,7 @@ def add_comment(book_name):
         mongo.db.book_rate.insert_one(rate_comment)
         flash("Rate/Comment Successfully Added")
         return redirect(url_for("book_profile.html"))
-    return redirect(url_for("book_profile.html"))
+    return redirect(url_for("book_profile.html", book_id = find_book_name._id ))
 
 
 if __name__ == "__main__":

@@ -29,6 +29,12 @@
                         {% else %}
                             <a class="btn light-blue darken-1 modal-trigger comment-btn disabled" href="#modal1">Login/Register To Add Comment <i class="far fa-comment-dots"></i> </a>
                         {% endif %}
+                        <hr>
+                        {% for comment in book_rate %}
+                            <p>comment.username / rated: comment.given_rate</p>
+                            <p>comment.added_comment</p>
+                            <hr>
+                        {% endfor %}
                         <div id="modal1" class="modal modal-comment">
                             <div class="modal-content">
                                 <form method="POST" action="{{ url_for('add_comment', book_name=find_book_id.book_name) }}">
