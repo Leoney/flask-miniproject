@@ -119,7 +119,7 @@ def add_comment(book_name):
         rate_comment = {
             "book_name": book_name,
             "username": session["user"],
-            "given_rate": request.form.get("rate")
+            "given_rate": request.form.get("rate"),
             "added_comment": request.form.get("comment_area")
         }
         mongo.db.book_rate.insert_one(rate_comment)
