@@ -31,13 +31,17 @@
                         {% endif %}
                         <hr>
                         {% for comment in book_rate %}
-                            <p>comment.username / rated: comment.given_rate</p>
-                            <p>comment.added_comment</p>
-                            <hr>
+                            {% for book in find_book_id %}
+                                {% if comment.book_name == book.book_name %}
+                                    <p>comment.username / rated: comment.given_rate</p>
+                                    <p>comment.added_comment</p>
+                                    <hr>
+                                {% endif%}
+                            {% endfor %}
                         {% endfor %}
                         <div id="modal1" class="modal modal-comment">
                             <div class="modal-content">
-                                <form method="POST" action="{{ url_for('add_comment', book_name=find_book_id.book_name) }}">
+                                <form method="POST" action="{{ url_for('add_comment', book_name=find_book_id._id) }}">
                                     <header>Rate This Book:</header>
                                     <div class="row starwidget">
                                         <input type="radio" name="rate" id="rate-5" value="5" class="browser-default">

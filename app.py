@@ -108,8 +108,7 @@ def add_book():
 def get_book_profile(book_id):
     book_id = book_id
     find_book_id = mongo.db.books.find_one({"_id": ObjectId(book_id)})
-    book_name = find_book_id.book_name
-    get_book_rate = mongo.db.book_rate.find_one({"book_name": book_name})
+    get_book_rate = list(mongo.db.book_rate.find())
     books = list(mongo.db.books.find())
     return render_template("book_profile.html", find_book_id=find_book_id, book_rate = get_book_rate, books=books, book_id = book_id)
 
