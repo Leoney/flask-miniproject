@@ -124,9 +124,11 @@ def add_comment(book_name):
             "added_comment": request.form.get("comment_area")
         }
         mongo.db.book_rate.insert_one(rate_comment)
+        get_book_rate = list(mongo.db.book_rate.find())
+        books = list(mongo.db.books.find())
         flash("Rate/Comment Successfully Added")
         return redirect(url_for("book_profile.html"))
-    return redirect(url_for("book_profile.html", book_id = find_book_name._id ))
+    return redirect(url_for("get_book_profile", book_id = find_book_name._id ))
 
 
 if __name__ == "__main__":
