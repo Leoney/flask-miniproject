@@ -24,6 +24,31 @@
                 <div class="row">
                     <div class="card-panel">
                         <span class="card-title">Comments</span>
+                        <a class="btn light-blue darken-1 modal-trigger" href="#modal1">Add Comment <i class="far fa-comment-dots"></i> </a>
+                        <div id="modal1" class="modal">
+                            <div class="modal-content">
+                                <form action="#">
+                                    <header>Rate This Book:</header>
+                                    <div class="row starwidget">
+                                        <input type="radio" name="rate" id="rate-5" class="browser-default">
+                                        <label for="rate-5" class="fas fa-star"></label>
+                                        <input type="radio" name="rate" id="rate-4" class="browser-default">
+                                        <label for="rate-4" class="fas fa-star"></label>
+                                        <input type="radio" name="rate" id="rate-3" class="browser-default">
+                                        <label for="rate-3" class="fas fa-star"></label>
+                                        <input type="radio" name="rate" id="rate-2" class="browser-default">
+                                        <label for="rate-2" class="fas fa-star"></label>
+                                        <input type="radio" name="rate" id="rate-1" class="browser-default">
+                                        <label for="rate-1" class="fas fa-star"></label>
+                                    </div>
+                                    <div class="row input-field">
+                                        <textarea id="textarea1" class="materialize-textarea"></textarea>
+                                        <label for="textarea1">Add Comment Here</label>
+                                    </div>
+                                    <button class="btn light-blue darken-1 modal-close" type="submit">Post</button>
+                                </form>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
