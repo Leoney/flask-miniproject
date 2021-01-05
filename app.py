@@ -124,7 +124,7 @@ def add_comment(book_name):
         }
         mongo.db.book_rate.insert_one(rate_comment)
         flash("Rate/Comment Successfully Added")
-        return redirect(url_for("book_profile.html", book_id=find_book_name._id ))
+        return redirect(url_for("book_profile.html"))
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
