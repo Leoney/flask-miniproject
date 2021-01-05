@@ -111,17 +111,6 @@ def get_book_profile(book_id):
     books = list(mongo.db.books.find())
     return render_template("book_profile.html", find_book_id=find_book_id, books=books, book_id = book_id)
 
-@app.route("/add_reading_list", methods=["GET", "POST"])
-def add_reading_list():
-    if request.method == "POST":
-        add_reading = request.form['add_reading']
-        book_to_read = {
-            "book_id": add_reading,
-            "user": session["user"]
-        }
-    mongo.db.to_read.insert_one(book_to_read)
-    return render_template("book_profile.html")
-
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
