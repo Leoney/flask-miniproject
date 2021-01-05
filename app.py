@@ -115,7 +115,6 @@ def get_book_profile(book_id):
 
 @app.route("/add_comment/<book_name>", methods=["GET", "POST"])
 def add_comment(book_name):
-    if 
     if request.method == "POST":
         find_book_name = mongo.db.books.find_one({"book_name": book_name})
         book_name = book_name
