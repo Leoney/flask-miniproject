@@ -114,6 +114,7 @@ def get_book_profile(book_id):
 @app.route("/add_comment/<book_name>", methods=["GET", "POST"])
 def add_comment(book_name):
     if request.method == "POST":
+        find_book_name = mongo.db.books.find_one({"book_name": book_name})
         book_name = book_name
         rate_comment = {
             "book_name": book_name,
@@ -123,7 +124,7 @@ def add_comment(book_name):
         }
         mongo.db.book_rate.insert_one(rate_comment)
         flash("Rate/Comment Successfully Added")
-        return redirect(url_for("get_book_profile(book_id)"))
+        return redirect(url_for("book_profile.html", book_id=find_book_name._id ))
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
