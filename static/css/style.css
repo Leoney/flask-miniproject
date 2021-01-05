@@ -10,8 +10,12 @@
     padding-top: 2rem;
 }
 
+.modal-comment{
+    width: 40rem;
+}
+
 .starwidget {
-    padding-right: 70%;
+    padding-right: 60%;
 }
 
 .starwidget input {
