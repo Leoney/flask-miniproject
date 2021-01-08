@@ -30,7 +30,7 @@
                             <a class="btn light-blue darken-1 modal-trigger comment-btn disabled" href="#modal1">Login/Register To Add Comment <i class="far fa-comment-dots"></i> </a>
                         {% endif %}
                         <hr>
-                        {% for comment in books %}
+                        {% for comment in find_book_id %}
                             {% if check_comments %}
                                 {% for cmmnt in comment.comments %}
                                     <p>{{ cmmnt.username }} / rated: {{ cmmnt.given_rate }}</p>
