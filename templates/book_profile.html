@@ -37,6 +37,8 @@
                                     <p>{{ cmmnt.added_comment }}</p>
                                     <hr>
                                 {% endfor%}
+                            {% else %}
+                                <p> 0 comments </p>
                             {% endif %}
                         {% endfor %}
                         <div id="modal1" class="modal modal-comment">
