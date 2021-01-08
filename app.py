@@ -123,7 +123,7 @@ def add_comment(book_id):
             "given_rate": request.form.get("rate"),
             "added_comment": request.form.get("comment_area")
         }
-        mongo.db.books.update({"_id": ObjectId(doc_id)}, { $push: { comments: {rate_comment}}})
+        mongo.db.books.update({"_id": ObjectId(doc_id)}, { $addToSet: { comments: {rate_comment}}})
         flash("Rate/Comment Successfully Added")
         return redirect(url_for("get_book_profile"))
     return render_template("book_profile.html", find_book_id=find_book_id, books=books, book_id = book_id)
