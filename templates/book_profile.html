@@ -33,8 +33,7 @@
                         {% if check_comments %}
                             {% for comment in find_book_id %}
                                 {% for cmmnt in comment.comments %}
-                                    <p>{{ cmmnt.username }} / rated: {{ cmmnt.given_rate }}</p>
-                                    <p>{{ cmmnt.added_comment }}</p>
+                                    {{ cmmnt }}
                                     <hr>
                                 {% endfor%}
                             {% endfor %}
