@@ -111,7 +111,7 @@ def get_book_profile(book_id):
     query = {"comments": {"$exists": True}}
     check_comments = mongo.db.books.find(query)
     books = list(mongo.db.books.find())
-    return render_template("book_profile.html", find_book_id=find_book_id, books=books, book_id = book_id check_comments = check_comments)
+    return render_template("book_profile.html", find_book_id=find_book_id, books=books, book_id = book_id, check_comments = check_comments)
 
 @app.route("/add_comment/<doc_id>", methods=["GET", "POST"])
 def add_comment(book_id):
@@ -132,7 +132,7 @@ def add_comment(book_id):
             mongo.db.books.update({"_id": ObjectId(doc_id)}, { "$set": { comments: {rate_comment}}})
         flash("Rate/Comment Successfully Added")
         return redirect(url_for("get_book_profile"))
-    return render_template("book_profile.html", find_book_id=find_book_id, books=books, book_id = book_id)
+    return render_template("book_profile.html", find_book_id=find_book_id, books=books, book_id = book_id, check_comments = check_comments)
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
