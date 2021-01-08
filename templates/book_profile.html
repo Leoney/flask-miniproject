@@ -31,11 +31,10 @@
                         {% endif %}
                         <hr>
                         {% if check_comments %}
-                            {% for comment in find_book_id %}
-                                {% for cmmnt in comment.comments %}
-                                    {{ cmmnt }}
-                                    <hr>
-                                {% endfor%}
+                            {% for comment in find_book_id.comments %}
+                                <p>{{ comment.username}} / reated: {{ comment.given_rate}}</p>
+                                <p> {{ comment.add_comment}} </p>
+                                <hr>
                             {% endfor %}
                         {% else %}
                             <p> 0 comments </p>
