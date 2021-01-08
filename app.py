@@ -108,9 +108,10 @@ def add_book():
 def get_book_profile(book_id):
     book_id = book_id
     find_book_id = mongo.db.books.find_one({"_id": ObjectId(book_id)})
-    get_book_rate = list(mongo.db.book_rate.find())
+    query = {"comments": {"$exists": True}}
+    check_comments = mongo.db.books.find(query)
     books = list(mongo.db.books.find())
-    return render_template("book_profile.html", find_book_id=find_book_id, books=books, book_id = book_id)
+    return render_template("book_profile.html", find_book_id=find_book_id, books=books, book_id = book_id check_comments = check_comments)
 
 @app.route("/add_comment/<doc_id>", methods=["GET", "POST"])
 def add_comment(book_id):
@@ -123,7 +124,12 @@ def add_comment(book_id):
             "given_rate": request.form.get("rate"),
             "added_comment": request.form.get("comment_area")
         }
-        mongo.db.books.update({"_id": ObjectId(doc_id)}, { "$addToSet": { comments: {rate_comment}}})
+        query = {"comments": {"$exists": True}}
+        check_comments = mongo.db.books.find(query)
+        if check_comments: 
+            mongo.db.books.update({"_id": ObjectId(doc_id)}, { "$addToSet": { comments: {rate_comment}}})
+        else: 
+            mongo.db.books.update({"_id": ObjectId(doc_id)}, { "$set": { comments: {rate_comment}}})
         flash("Rate/Comment Successfully Added")
         return redirect(url_for("get_book_profile"))
     return render_template("book_profile.html", find_book_id=find_book_id, books=books, book_id = book_id)
