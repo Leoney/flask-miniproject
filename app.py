@@ -110,25 +110,23 @@ def get_book_profile(book_id):
     find_book_id = mongo.db.books.find_one({"_id": ObjectId(book_id)})
     get_book_rate = list(mongo.db.book_rate.find())
     books = list(mongo.db.books.find())
-    return render_template("book_profile.html", find_book_id=find_book_id, book_rate = get_book_rate, books=books, book_id = book_id)
+    return render_template("book_profile.html", find_book_id=find_book_id, books=books, book_id = book_id)
 
-@app.route("/add_comment/<book_name>", methods=["GET", "POST"])
-def add_comment(book_name):
+@app.route("/add_comment/<doc_id>", methods=["GET", "POST"])
+def add_comment(book_id):
     if request.method == "POST":
-        book_name = book_name
+        dook_id = book_id
+        find_book_id = mongo.db.books.find_one({"_id": ObjectId(book_id)})
+        books = list(mongo.db.books.find())
         rate_comment = {
-            "book_name": book_name,
             "username": session["user"],
             "given_rate": request.form.get("rate"),
             "added_comment": request.form.get("comment_area")
         }
-        mongo.db.book_rate.insert_one(rate_comment)
-        get_book_rate = list(mongo.db.book_rate.find())
-        books = list(mongo.db.books.find())
+        mongo.db.books.update({"_id": ObjectId(doc_id)}, { $push: { comments: {rate_comment}}})
         flash("Rate/Comment Successfully Added")
-        return redirect(url_for("book_profile.html"))
-    return redirect(url_for("get_book_profile", book_id = book_name ))
-
+        return redirect(url_for("get_book_profile"))
+    return render_template("book_profile.html", find_book_id=find_book_id, books=books, book_id = book_id)
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
