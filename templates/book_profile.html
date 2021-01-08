@@ -31,11 +31,13 @@
                         {% endif %}
                         <hr>
                         {% for comment in books %}
-                            {% for cmmnt in comment.comments %}
-                                <p>{{ cmmnt.username }} / rated: {{ cmmnt.given_rate }}</p>
-                                <p>{{ cmmnt.added_comment }}</p>
-                                <hr>
-                            {% endfor%}
+                            {% if comment.comments != null %}
+                                {% for cmmnt in comment.comments %}
+                                    <p>{{ cmmnt.username }} / rated: {{ cmmnt.given_rate }}</p>
+                                    <p>{{ cmmnt.added_comment }}</p>
+                                    <hr>
+                                {% endfor%}
+                            {% endif %}
                         {% endfor %}
                         <div id="modal1" class="modal modal-comment">
                             <div class="modal-content">
