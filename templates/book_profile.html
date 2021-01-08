@@ -32,7 +32,7 @@
                         <hr>
                         {% for comment in find_book_id %}
                             {% if check_comments %}
-                                {% for cmmnt in comment.comments %}
+                                {% for cmmnt in {{ comment.comments }} %}
                                     <p>{{ cmmnt.username }} / rated: {{ cmmnt.given_rate }}</p>
                                     <p>{{ cmmnt.added_comment }}</p>
                                     <hr>
