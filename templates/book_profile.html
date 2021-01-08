@@ -31,7 +31,7 @@
                         {% endif %}
                         <hr>
                         {% for comment in books %}
-                            {% if comment.comments != null %}
+                            {% if comment.comments != "" %}
                                 {% for cmmnt in comment.comments %}
                                     <p>{{ cmmnt.username }} / rated: {{ cmmnt.given_rate }}</p>
                                     <p>{{ cmmnt.added_comment }}</p>
