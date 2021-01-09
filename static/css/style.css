@@ -2,8 +2,9 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400&display=swap');
 
-body {
-    font-family: 'Rubik', Arial, sans-serif;
+.brand-logo {
+    color: #888;
+    background-image: linear-gradient(0deg,#ffeeda 50%,transparent 50%);
 }
 
 .text-shadow {
