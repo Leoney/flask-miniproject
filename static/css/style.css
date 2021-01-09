@@ -21,8 +21,31 @@
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
 
+.book-profile h3 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 400;
+}
+
+.book-profile h3 span {
+    background-image: linear-gradient(0deg,#ffeeda 50%,transparent 50%);
+}
+
+.book-profile h4{
+    font-family: 'Rubik', sans-serif;
+}
+
+.book-profile h4 span {
+    color:  #888 !important;
+}
+
+.book-profile h4 a {
+    text-decoration: none;
+    border-bottom: 1px solid #1CD5BD;
+}
+
 .flashes h4 {
     line-height: 2;
+    font-weight: 400;
 }
 
 .container.book-profile {
