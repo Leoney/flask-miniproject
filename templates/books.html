@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
     <div class="row">
-        {% for book in books[:-8:-1] %}
-            <div class="col s12 m3">
+        {% for book in books[:-8:0] %}
+            <div class="col s12 m6 l3">
                 <div class="card">
                     <div class="card-image">
                         <a href="{{ url_for('get_book_profile', book_id=book._id) }}"> <img src="{{ book.book_cover_link }}"> </a>
