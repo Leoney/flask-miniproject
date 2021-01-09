@@ -123,7 +123,6 @@ def add_comment(book_id):
             "username": session["user"],
             "given_rate": request.form.get("rate"),
             "added_comment": request.form.get("comment_area")
-            "ratings_average": null
         }
         query = {"comments": {"$exists": True}}
         check_comments = mongo.db.books.find(query)
