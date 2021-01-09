@@ -48,6 +48,8 @@
 .flashes h4 {
     line-height: 2;
     font-weight: 400;
+    font-family: 'Rubik', sans-serif;
+    letter-spacing: .07rem;
 }
 
 .container.book-profile {
