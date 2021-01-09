@@ -32,6 +32,7 @@
 
 .book-profile h4{
     font-family: 'Rubik', sans-serif;
+    font-size: 1rem;
 }
 
 .book-profile h4 span {
@@ -39,6 +40,7 @@
 }
 
 .book-profile h4 a {
+    color: #222 !important;
     text-decoration: none;
     border-bottom: 1px solid #1CD5BD;
 }
@@ -50,6 +52,12 @@
 
 .container.book-profile {
     padding-top: 2rem;
+}
+
+.card-title {
+    background-image: linear-gradient(to right, #ffeeda , white);
+    text-transform: uppercase;
+    font-size: .8125rem;
 }
 
 .modal-comment{
