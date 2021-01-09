@@ -29,7 +29,6 @@
                         {% else %}
                             <a class="btn teal lighten-2 modal-trigger comment-btn disabled" href="#modal1">Login/Register To Add Comment <i class="far fa-comment-dots"></i> </a>
                         {% endif %}
-                        <hr>
                         {% if check_comments %}
                             {% for comment in find_book_id.comments %}
                                 <p>{{ comment.username}} / reated: {{ comment.given_rate}}</p>

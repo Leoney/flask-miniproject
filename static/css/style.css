@@ -54,6 +54,15 @@
     padding-top: 2rem;
 }
 
+.card-image::after {
+    width: 100%;
+    height: 100%;
+    top: .5rem;
+    left: .5rem;
+    z-index: -1;
+    background-color: rgba(255, 168, 70, 0.2);
+}
+
 .card-title {
     background-image: linear-gradient(to right, #ffeeda , white);
     text-transform: uppercase;
