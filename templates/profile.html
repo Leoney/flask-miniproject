@@ -49,7 +49,7 @@
     </div>
     <div id="modal2" class="modal modal-comment">
         <div class="modal-content">
-            <form method="POST" action="{{ url_for('add_comment', book_id=find_book_id._id) }}">
+            <form method="POST" action="{{ url_for('add_comment', book_id=book._id) }}">
                 <header>Rate This Book:</header>
                 <div class="row starwidget">
                     <input type="radio" name="rate" id="rate-5" value="5" class="browser-default">
