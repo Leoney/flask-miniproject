@@ -30,9 +30,15 @@
                     {% if book.comments %}
                         {% for key in book.comments %}
                             {% if session.user|lower == key.username|lower  %}
+                            <div class="col s12 m4 l8">
                                 <p>{{ book.book_name}}/ By {{ book.author_name}}</p>
                                 <p>Rated: {{ key.given_rate}}</p>
                                 <p>Comment: {{ key.added_comment}}</p>
+                            </div>
+                            <div class="col s12 m4 l4">
+                                <a href="" class="btn-small red darken-3">Delete</a>
+                                <a href="" class="btn-small light-blue lighten-1">Edit</a>
+                            </div>
                             {% endif %}
                         {%  endfor %}
                     {% endif %}
