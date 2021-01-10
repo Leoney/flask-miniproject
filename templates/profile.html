@@ -37,7 +37,7 @@
                             </div>
                             <div class="col s12 m4 l4">
                                 <a href="" class="btn-small red darken-3">Delete</a>
-                                <a href="#modal2, book_id = book._id " class="btn-small modal-trigger light-blue lighten-1">Edit</a>
+                                <a href="#modal2" class="btn-small modal-trigger light-blue lighten-1">Edit</a>
                             </div>
                             {% endif %}
                         {%  endfor %}
@@ -49,7 +49,7 @@
     </div>
     <div id="modal2" class="modal modal-comment">
         <div class="modal-content">
-            <form method="POST" action="{{ url_for('add_comment', book_id=book_id) }}">
+            <form method="POST" action="{{ url_for('add_comment', book_id='5fed027fb5d619751647c69d') }}">
                 <header>Rate This Book:</header>
                 <div class="row starwidget">
                     <input type="radio" name="rate" id="rate-5" value="5" class="browser-default">
