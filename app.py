@@ -135,6 +135,21 @@ def add_comment(book_id):
         return redirect(url_for("get_book_profile",book_id = book_id ))
     return render_template("book_profile.html", find_book_id=find_book_id, books=books, book_id = book_id, check_comments = check_comments)
 
+@app.route("/edit_review/<book_id>", methods=["GET", "POST"])
+def edit_review(book_id):
+    if request.method == "POST":
+        rate_comment = {
+            "username": session["user"],
+            "given_rate": request.form.get("rate"),
+            "added_comment": request.form.get("comment_area")
+        }
+        mongo.db.books.update({"_id": ObjectId(book_id)}, { "$addToSet": { "comments": rate_comment}}, submit)
+        flash("Review Successfully Updated")
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+    books = list(mongo.db.books.find())
+    return render_template("profile.html", username=username, books = books)
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
