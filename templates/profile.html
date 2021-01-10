@@ -10,5 +10,34 @@
             </div>
         </div>
     </div>
+    <div class="row">
+        <div class="col s12 m8 offset-m2">
+            <div class="card-panel">
+                <h3 class="center-align light-blue-text text-darken 4">
+                    Added Books
+                </h3>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12 m8 offset-m2">
+            <div class="card-panel">
+                <h3 class="center-align light-blue-text text-darken 4">
+                    Added Reviews
+                </h3>
+                {% for book in books %}
+                    {% if book.comments %}
+                        {% for key in book.comments %}
+                            {% if session.user|lower == key.username|lower  %}
+                                <p>{{ book.book_name}}/ By {{ book.author_name}}</p>
+                                <p>Rated: {{ key.given_rate}}</p>
+                                <p>Comment: {{ key.added_comment}}</p>
+                            {% endif %}
+                        {%  endfor %}
+                    {% endif %}
+                {% endfor%}
+            </div>
+        </div>
+    </div>
 
 {% endblock %}
