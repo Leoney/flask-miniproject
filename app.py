@@ -127,12 +127,7 @@ def add_comment(book_id):
             "given_rate": request.form.get("rate"),
             "added_comment": request.form.get("comment_area")
         }
-        query = {"comments": {"$exists": True}}
-        check_comments = mongo.db.books.find(query)
-        if check_comments: 
-            mongo.db.books.update({"_id": ObjectId(book_id)}, { "$addToSet": { "comments": rate_comment}})
-        else: 
-            mongo.db.books.update({"_id": ObjectId(book_id)}, { "$set": { "comments": rate_comment}})
+        mongo.db.comments.insert_one(book)
         flash("Rate/Comment Successfully Added")
         return redirect(url_for("get_book_profile",book_id = book_id ))
     return render_template("book_profile.html", find_book_id=find_book_id, books=books, book_id = book_id, check_comments = check_comments)
