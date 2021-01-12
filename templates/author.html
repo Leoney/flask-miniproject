@@ -2,6 +2,8 @@
 {% block content %}
     <div class="row">
         <h3>{{ author_name }}</h3>
+    </div>
+    <div class="row">
         <br>
         {% for book in books %}
             {% if book.author_name == author_name %}
