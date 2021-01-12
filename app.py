@@ -151,7 +151,7 @@ def edit_review(comment_id):
             "given_rate": request.form.get("rate"),
             "added_comment": request.form.get("comment_area")
         }
-        mongo.db.comments.update({"_id": ObjectId(comment_id)}, { "$set": {rate_comment}}, submit)
+        mongo.db.comments.update(({"_id": ObjectId(comment_id)}, { "$set": rate_comment)
         flash("Review Successfully Updated")
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
