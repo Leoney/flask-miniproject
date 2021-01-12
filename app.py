@@ -79,7 +79,8 @@ def profile(username):
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
     books = list(mongo.db.books.find())
-    return render_template("profile.html", username=username, books = books)
+    check_comments = mongo.db.comments.find()
+    return render_template("profile.html", username=username, books = books, check_comments = check_comments)
 
 @app.route("/logout")
 def logout():
