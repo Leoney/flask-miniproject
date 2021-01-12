@@ -120,7 +120,7 @@ def add_comment(book_id):
         dook_id = book_id
         find_book_id = mongo.db.books.find_one({"_id": ObjectId(book_id)})
         book_name = find_book_id.get("book_name")
-        check_comments = mongo.db.comments.find({"book_name": book_name})
+        check_comments = mongo.db.comments.find({"book_name2": book_name})
         books = list(mongo.db.books.find())
         rate_comment = {
             "book_name2": book_name,
