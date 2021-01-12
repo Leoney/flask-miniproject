@@ -29,16 +29,11 @@
                         {% else %}
                             <a class="btn teal lighten-2 modal-trigger comment-btn disabled" href="#modal1">Login/Register To Add Comment <i class="far fa-comment-dots"></i> </a>
                         {% endif %}
-                        {% if check_comments %}
-                            {% for comment in check_comments %}
-                                {{ comment }}
-                                <p>{{ comment.username}} / reated: {{ comment.given_rate}}</p>
-                                <p> {{ comment.added_comment}} </p>
-                                <hr>
-                            {% endfor %}
-                        {% else %}
-                            <p> 0 comments </p>
-                        {% endif %}
+                        {% for comment in check_comments %}
+                            <p>{{ comment.username}} / reated: {{ comment.given_rate}}</p>
+                            <p> {{ comment.added_comment}} </p>
+                            <hr>
+                        {% endfor %}
                         <div id="modal1" class="modal modal-comment">
                             <div class="modal-content">
                                 <form method="POST" action="{{ url_for('add_comment', book_id=find_book_id._id, book_name=find_book_id.book_name) }}">
