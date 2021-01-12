@@ -29,7 +29,7 @@
                 {% for comment in check_comments %}
                     {% if session.user|lower == comment.username|lower  %}
                         <div class="col s12 m4 l8">
-                            <p>{{ comment.book_name}}</p>
+                            <p>{{ comment.book_name2}}</p>
                             <p>Rated: {{ comment.given_rate}}</p>
                             <p>Comment: {{ comment.added_comment}}</p>
                         </div>
@@ -45,7 +45,7 @@
     </div>
     <div id="modal2" class="modal modal-comment">
         <div class="modal-content">
-            <form method="POST" action="{{ url_for('edit_review', comment_id='5fed027fb5d619751647c69d') }}">
+            <form method="POST" action="{{ url_for('edit_review', comment_id=comment._id, book_name = comment.book_name2) }}">
                 <header>Rate This Book:</header>
                 <div class="row starwidget">
                     <input type="radio" name="rate" id="rate-5" value="5" class="browser-default">
