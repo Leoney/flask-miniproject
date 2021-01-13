@@ -23,6 +23,7 @@
 
 .search-bar{
     margin: 5rem 0 !important;
+    box-shadow: .65rem -.65rem 0 rgba(255,168,70,.2);
 }
 
 .book-profile h3 {
