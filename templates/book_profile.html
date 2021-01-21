@@ -14,6 +14,11 @@
                 <h4><span>By </span><a href="{{ url_for('get_author_books', author_name = find_book_id.author_name) }}">{{ find_book_id.author_name }}</a></h4>
                 <p>{{ find_book_id.category_name }}</p>
                 <p>{{ find_book_id.book_description }}</p>
+                {% if session.user %}
+                    <a class="btn teal lighten-2 modal-trigger comment-btn" href="#modal1">Add Comment <i class="far fa-comment-dots"></i> </a>
+                {% else %}
+                    <a class="btn teal lighten-2 modal-trigger comment-btn disabled" href="#modal1">Login/Register To Add Comment <i class="far fa-comment-dots"></i> </a>
+                {% endif %}
             </div>
             <div class="col s3">
                 Buy Now
@@ -25,11 +30,6 @@
                     <ul class="collection with-header">
                         <li class="collection-header">
                             <h4><span class="card-title"> Comments</span></h4>
-                            {% if session.user %}
-                                <a class="btn teal lighten-2 modal-trigger comment-btn" href="#modal1">Add Comment <i class="far fa-comment-dots"></i> </a>
-                            {% else %}
-                                <a class="btn teal lighten-2 modal-trigger comment-btn disabled" href="#modal1">Login/Register To Add Comment <i class="far fa-comment-dots"></i> </a>
-                            {% endif %}
                         </li>
                         {% for comment in check_comments %}
                             {% if comment.book_name2 == find_book_id.book_name %}
